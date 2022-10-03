@@ -1,6 +1,4 @@
-﻿using NUnit.Framework;
-using PlaywrightWithSpecFlowDemo.Drivers;
-using PlaywrightWithSpecFlowDemo.Pages;
+﻿using PlaywrightWithSpecFlowDemo.Drivers;
 using PlaywrightWithSpecFlowDemo.Services;
 
 namespace PlaywrightWithSpecFlowDemo.StepDefinitions

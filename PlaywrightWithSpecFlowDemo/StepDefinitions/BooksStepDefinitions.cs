@@ -1,8 +1,5 @@
 using PlaywrightWithSpecFlowDemo.Drivers;
-using PlaywrightWithSpecFlowDemo.Pages;
 using PlaywrightWithSpecFlowDemo.Services;
-using System;
-using TechTalk.SpecFlow;
 
 namespace PlaywrightWithSpecFlowDemo.StepDefinitions
 {
