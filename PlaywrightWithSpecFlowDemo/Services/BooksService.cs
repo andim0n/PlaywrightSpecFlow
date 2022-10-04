@@ -1,36 +1,28 @@
-﻿using PlaywrightWithSpecFlowDemo.Drivers;
-using PlaywrightWithSpecFlowDemo.Pages;
+﻿using UiAutomationDemo.Pages;
 
-namespace PlaywrightWithSpecFlowDemo.Services
+namespace UiAutomationDemo.Services
 {
-    public class BooksService
+    public class BooksService : PageProvider<BooksPage>
     {
-        private BooksPage _booksPage;
-
-        public BooksService(Driver driver)
-        {
-            _booksPage = new BooksPage(driver.Page);
-        }
 
         public void OpenMainPage()
         {
-            _booksPage.Page.GotoAsync(_booksPage.URL).GetAwaiter().GetResult();
-            _booksPage.Table.WaitForAsync().GetAwaiter().GetResult();
+            Page.Table.WaitForDisplayed();
         }
 
         public void InputText(string text)
         {
-            _booksPage.SearchInput.FillAsync(text).GetAwaiter().GetResult();
+            Page.SearchInput.Fill(text);
         }
 
         public void SelectFirstElement()
         {
-            _booksPage.TableElement.First.ClickAsync().GetAwaiter().GetResult();
+            Page.BookTitle.Click();
         }
 
-        public void ValidateTitle(string text)
+        public void ValidateDescription(string text)
         {
-            _booksPage.BookTitle.InnerTextAsync().GetAwaiter().GetResult().Should().Be(text);
+            Page.BookDescription.Text.Should().Be(text);
         }
     }
 }

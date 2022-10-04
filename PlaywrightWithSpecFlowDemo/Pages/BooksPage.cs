@@ -1,19 +1,15 @@
-﻿using Microsoft.Playwright;
+﻿using UiAutomationCore.UI.BaseElement;
+using UiAutomationCore.UI.BasePage;
+using UiAutomationCore.UI.WrappedElements;
 
-namespace PlaywrightWithSpecFlowDemo.Pages
+namespace UiAutomationDemo.Pages
 {
-    public class BooksPage
+    public class BooksPage : BasePage
     {
-        public IPage Page;
-        public string URL => "https://demoqa.com/books";
-        public ILocator Table => Page.Locator(".rt-tbody");
-        public ILocator SearchInput => Page.Locator("#searchBox");
-        public ILocator TableElement => Page.Locator(".action-buttons");
-        public ILocator BookTitle => Page.Locator("#title-wrapper #userName-value");
-
-        public BooksPage(IPage page)
-        {
-            Page = page;
-        }
+        public BooksPage() : base("https://demoqa.com/books") { }
+        public Element Table => Find<Element>(".rt-tbody");
+        public TextBox SearchInput => Find<TextBox>("#searchBox");
+        public Button BookTitle => Find<Button>(".action-buttons");
+        public Element BookDescription => Find<Element>("#title-wrapper #userName-value");
     }
 }

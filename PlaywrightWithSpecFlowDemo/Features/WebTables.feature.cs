@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace PlaywrightWithSpecFlowDemo.Features
+namespace UiAutomationDemo.Features
 {
     using TechTalk.SpecFlow;
     using System;

@@ -1,19 +1,11 @@
-﻿using PlaywrightWithSpecFlowDemo.Drivers;
-using PlaywrightWithSpecFlowDemo.Services;
+﻿using UiAutomationDemo.Services;
 
-namespace PlaywrightWithSpecFlowDemo.StepDefinitions
+namespace UiAutomationDemo.StepDefinitions
 {
     [Binding]
     public sealed class WebTablesStepDefinitions
     {
-        private readonly Driver _driver;
-        private readonly WebTablesService _webTablesService;
-
-        public WebTablesStepDefinitions(Driver driver)
-        {
-            _driver = driver;
-            _webTablesService = new WebTablesService(_driver);
-        }
+        private WebTablesService _webTablesService = new WebTablesService();
 
         [StepDefinition(@"The '([^']*)' page is open")]
         public void ThePageIsOpen(string page)

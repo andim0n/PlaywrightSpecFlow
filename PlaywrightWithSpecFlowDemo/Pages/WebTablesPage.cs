@@ -1,24 +1,20 @@
-﻿using Microsoft.Playwright;
+﻿using UiAutomationCore.UI.BasePage;
+using UiAutomationCore.UI.BaseElement;
+using UiAutomationCore.UI.WrappedElements;
 
-namespace PlaywrightWithSpecFlowDemo.Pages
+namespace UiAutomationDemo.Pages
 {
-    public class WebTablesPage
+    public class WebTablesPage : BasePage
     {
-        public IPage Page;
-        public string URL => "https://demoqa.com/webtables";
-        public ILocator Table => Page.Locator(".rt-table");
-        public ILocator BtnAdd => Page.Locator("#addNewRecordButton");
-        public ILocator BtnSubmit => Page.Locator("#submit");
-        public ILocator FirstName => Page.Locator("#firstName");
-        public ILocator LastName => Page.Locator("#lastName");
-        public ILocator Email => Page.Locator("#userEmail");
-        public ILocator Age => Page.Locator("#age");
-        public ILocator Salary => Page.Locator("#salary");
-        public ILocator Department => Page.Locator("#department");
-
-        public WebTablesPage(IPage page)
-        {
-            Page = page;
-        }
+        public WebTablesPage() : base("https://demoqa.com/webtables") { }
+        public Element Table => Find<Element>(".rt-table");
+        public Button BtnAdd => Find<Button>("#addNewRecordButton");
+        public Button BtnSubmit => Find<Button>("#submit");
+        public TextBox FirstName => Find<TextBox>("#firstName");
+        public TextBox LastName => Find<TextBox>("#lastName");
+        public TextBox Email => Find<TextBox>("#userEmail");
+        public TextBox Age => Find<TextBox>("#age");
+        public TextBox Salary => Find<TextBox>("#salary");
+        public TextBox Department => Find<TextBox>("#department");
     }
 }
