@@ -1,6 +1,6 @@
 using Microsoft.Playwright;
 
-namespace UiAutomationDemo.Drivers;
+namespace UiAutomationCore.Drivers;
 
 public class Driver : IDisposable
 {

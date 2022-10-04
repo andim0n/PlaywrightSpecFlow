@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-//using UiAutomationCore.UI.Browser;
+﻿//using UiAutomationCore.UI.Browser;
 using UiAutomationCore.Utils.ExtentReport;
-using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using AssertionException = UiAutomationCore.Utils.Exceptions.AssertionException;
 

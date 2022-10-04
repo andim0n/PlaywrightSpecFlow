@@ -1,8 +1,7 @@
-﻿using System;
-using UiAutomationCore.UI.BaseElement;
+﻿using UiAutomationCore.UI.BaseElement;
 using UiAutomationCore.Utils;
 using Microsoft.Playwright;
-using UiAutomationDemo.Drivers;
+using UiAutomationCore.Drivers;
 
 namespace UiAutomationCore.UI.BasePage
 {
