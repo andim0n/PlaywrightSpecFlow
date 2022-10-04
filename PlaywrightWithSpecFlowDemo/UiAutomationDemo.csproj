@@ -24,12 +24,4 @@
     <ProjectReference Include="..\UiAutomationCore\UiAutomationCore.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <EditorConfigFiles Remove="C:\Users\a.piatrou\dev\dsg\PlaywrightWithSpecFlowDemo\PlaywrightWithSpecFlowDemo\.editorconfig" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="C:\Users\a.piatrou\dev\dsg\PlaywrightWithSpecFlowDemo\PlaywrightWithSpecFlowDemo\.editorconfig" />
-  </ItemGroup>
-
 </Project>

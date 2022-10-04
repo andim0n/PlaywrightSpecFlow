@@ -12,7 +12,7 @@ namespace UiAutomationCore.UI.BaseElement
             Locator.WaitForAsync(new LocatorWaitForOptions
             {
                 State = WaitForSelectorState.Visible,
-                Timeout = ConfigManager.WaitTimeout
+                //Timeout = ConfigManager.WaitTimeout
             }).GetAwaiter().GetResult();
 
             Logger.Info($"Waiting for [{@Locator}] completed successfully");
@@ -26,7 +26,7 @@ namespace UiAutomationCore.UI.BaseElement
             Locator.WaitForAsync(new LocatorWaitForOptions
             {
                 State = WaitForSelectorState.Attached,
-                Timeout = ConfigManager.WaitTimeout
+                //Timeout = ConfigManager.WaitTimeout
             }).GetAwaiter().GetResult();
 
             Logger.Info($"Waiting for [{@Locator}] completed successfully");
