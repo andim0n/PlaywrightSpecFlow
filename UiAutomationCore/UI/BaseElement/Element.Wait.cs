@@ -5,9 +5,9 @@ namespace UiAutomationCore.UI.BaseElement
 {
     public partial class Element
     {
-        public Element WaitForDisplayed ()
+        public Element WaitForDisplayed()
         {
-            //Logger.Info($"Waiting for [{@Locator}] is Displayed");
+            Logger.Info($"Waiting for [{@Locator}] is Displayed");
 
             Locator.WaitForAsync(new LocatorWaitForOptions
             {
@@ -15,13 +15,13 @@ namespace UiAutomationCore.UI.BaseElement
                 //Timeout = ConfigManager.WaitTimeout
             }).GetAwaiter().GetResult();
 
-            //Logger.Info($"Waiting for [{@Locator}] completed successfully");
+            Logger.Info($"Waiting for [{@Locator}] completed successfully");
             return this;
         }
-        
-        public Element WaitForAttached ()
+
+        public Element WaitForAttached()
         {
-            //Logger.Info($"Waiting for [{@Locator}] is Attached");
+            Logger.Info($"Waiting for [{@Locator}] is Attached");
 
             Locator.WaitForAsync(new LocatorWaitForOptions
             {
@@ -29,7 +29,7 @@ namespace UiAutomationCore.UI.BaseElement
                 //Timeout = ConfigManager.WaitTimeout
             }).GetAwaiter().GetResult();
 
-            //Logger.Info($"Waiting for [{@Locator}] completed successfully");
+            Logger.Info($"Waiting for [{@Locator}] completed successfully");
             return this;
         }
     }

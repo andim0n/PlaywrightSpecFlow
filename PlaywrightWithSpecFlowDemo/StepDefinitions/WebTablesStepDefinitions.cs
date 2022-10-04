@@ -28,7 +28,7 @@ namespace UiAutomationDemo.StepDefinitions
             _webTablesService.FillRegistrationForm(firstName, lastName, email, age, salary, department);
         }
 
-        [StepDefinition(@"I should be able to see the row with data '([^']*)', '([^']*)', '([^']*)', '([^']*)', '([^']*)', '([^']*)' in the table")]
+        [StepDefinition(@"I should be able to see new row with data '([^']*)', '([^']*)', '([^']*)', '([^']*)', '([^']*)', '([^']*)' in the table")]
         public void ShouldBeAbleToSeeNewRowWithDataInTheTable(string firstName, string lastName, string email, string age, string salary, string department)
         {
             _webTablesService.ValidateRowData(firstName, lastName, email, age, salary, department);

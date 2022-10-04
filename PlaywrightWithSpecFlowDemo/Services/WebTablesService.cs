@@ -37,18 +37,11 @@ namespace UiAutomationDemo.Services
         public void ValidateRowData(string firstName, string lastName, string email, string age, string salary, string department)
         {
             var actualFirstName = Page.FindByText<Element>(".rt-td", firstName).GetText;
-            var actualLastName = Page.FindByText<Element>(".rt-td", firstName).GetText;
-            var actualEmail = Page.FindByText<Element>(".rt-td", firstName).GetText;
-            var actualAge = Page.FindByText<Element>(".rt-td", firstName).GetText;
-            var actualSalary = Page.FindByText<Element>(".rt-td", firstName).GetText;
-            var actualDepartment = Page.FindByText<Element>(".rt-td", firstName).GetText;
-
-            //var actualFirstName = Page.Locator($".rt-td:text('{firstName}')").TextContentAsync().GetAwaiter().GetResult();
-            //var actualLastName = Page.Page.Locator($".rt-td:text('{lastName}')").TextContentAsync().GetAwaiter().GetResult();
-            //var actualEmail = Page.Page.Locator($".rt-td:has-text('{email}')").TextContentAsync().GetAwaiter().GetResult();
-            //var actualAge = Page.Page.Locator($".rt-td:has-text('{age}')").TextContentAsync().GetAwaiter().GetResult();
-            //var actualSalary = Page.Page.Locator($".rt-td:has-text('{salary}')").TextContentAsync().GetAwaiter().GetResult();
-            //var actualDepartment = Page.Page.Locator($".rt-td:has-text('{department}')").TextContentAsync().GetAwaiter().GetResult();
+            var actualLastName = Page.FindByText<Element>(".rt-td", lastName).GetText;
+            var actualEmail = Page.FindByText<Element>(".rt-td", email).GetText;
+            var actualAge = Page.FindByText<Element>(".rt-td", age).GetText;
+            var actualSalary = Page.FindByText<Element>(".rt-td", salary).GetText;
+            var actualDepartment = Page.FindByText<Element>(".rt-td", department).GetText;
 
             actualFirstName.Should().Be(firstName);
             actualLastName.Should().Be(lastName);

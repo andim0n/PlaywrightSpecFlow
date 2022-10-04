@@ -1,6 +1,5 @@
 ﻿using System;
 using UiAutomationCore.UI.BaseElement;
-//using UiAutomationCore.UI.Browser;
 using UiAutomationCore.Utils;
 using Microsoft.Playwright;
 using UiAutomationDemo.Drivers;
@@ -16,7 +15,7 @@ namespace UiAutomationCore.UI.BasePage
         {
             _driver = new Driver();
             _page = _driver.Page;
-            //Logger.Info($"Opening new page");
+            Logger.Info($"Opening new page");
             _page.GotoAsync(url).GetAwaiter().GetResult();
         }
         protected BasePage()

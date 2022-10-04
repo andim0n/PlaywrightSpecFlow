@@ -4,10 +4,10 @@ namespace UiAutomationCore.UI.BaseElement
 {
     public partial class Element
     {
-        public void Click ()
+        public void Click()
         {
             Locator.First.ClickAsync().GetAwaiter().GetResult();
-            //Logger.Info($"[{@Locator}] was clicked");
+            Logger.Info($"[{@Locator}] was clicked");
         }
     }
 }
