@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace PlaywrightWithSpecFlowDemo.Features
+namespace UiAutomationDemo.Features
 {
     using TechTalk.SpecFlow;
     using System;
@@ -86,6 +86,7 @@ namespace PlaywrightWithSpecFlowDemo.Features
         [NUnit.Framework.DescriptionAttribute("Creating new row in the table")]
         [NUnit.Framework.CategoryAttribute("createNewRow")]
         [NUnit.Framework.TestCaseAttribute("Emilia", "Smith", "example@test.com", "25", "11500", "Retail", null)]
+        [NUnit.Framework.TestCaseAttribute("Elliot", "Alderson", "root@kali.net", "27", "99999", "Security", null)]
         public void CreatingNewRowInTheTable(string firstName, string lastName, string email, string age, string salary, string department, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -127,7 +128,7 @@ this.FeatureBackground();
  testRunner.And("Click \'Submit\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 13
- testRunner.Then(string.Format("I should be able to see the row with data \'{0}\', \'{1}\', \'{2}\', \'{3}\', \'{4}\', \'{5}" +
+ testRunner.Then(string.Format("I should be able to see new row with data \'{0}\', \'{1}\', \'{2}\', \'{3}\', \'{4}\', \'{5}" +
                             "\' in the table", firstName, lastName, email, age, salary, department), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

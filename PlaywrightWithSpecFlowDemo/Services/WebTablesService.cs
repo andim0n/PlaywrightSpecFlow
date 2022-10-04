@@ -1,53 +1,47 @@
-﻿using PlaywrightWithSpecFlowDemo.Drivers;
+﻿using UiAutomationCore.UI.BaseElement;
+using UiAutomationDemo.Pages;
 
-namespace PlaywrightWithSpecFlowDemo.Services
+namespace UiAutomationDemo.Services
 {
-    public class WebTablesService
+    public class WebTablesService : PageProvider<WebTablesPage>
     {
-        private Pages.WebTablesPage _webTablesPage;
-
-        public WebTablesService(Driver driver)
-        {
-            _webTablesPage = new Pages.WebTablesPage(driver.Page);
-        }
 
         public void OpenMainPage()
         {
-            _webTablesPage.Page.GotoAsync(_webTablesPage.URL).GetAwaiter().GetResult();
-            _webTablesPage.Table.WaitForAsync();
+            Page.Table.WaitForDisplayed();
         }
 
         public void ClickButton(string button)
         {
             if (button == "Add")
             {
-                _webTablesPage.BtnAdd.ClickAsync().GetAwaiter().GetResult();
-                _webTablesPage.BtnSubmit.WaitForAsync().GetAwaiter().GetResult();
+                Page.BtnAdd.Click();
+                Page.BtnSubmit.WaitForDisplayed();
             }
             else if (button == "Submit")
             {
-                _webTablesPage.BtnSubmit.ClickAsync().GetAwaiter().GetResult();
+                Page.BtnSubmit.Click();
             }
         }
 
         public void FillRegistrationForm(string firstName, string lastName, string email, string age, string salary, string department)
         {
-            _webTablesPage.FirstName.FillAsync(firstName).GetAwaiter().GetResult();
-            _webTablesPage.LastName.FillAsync(lastName).GetAwaiter().GetResult();
-            _webTablesPage.Email.FillAsync(email).GetAwaiter().GetResult();
-            _webTablesPage.Age.FillAsync(age).GetAwaiter().GetResult();
-            _webTablesPage.Salary.FillAsync(salary).GetAwaiter().GetResult();
-            _webTablesPage.Department.FillAsync(department).GetAwaiter().GetResult();
+            Page.FirstName.Fill(firstName);
+            Page.LastName.Fill(lastName);
+            Page.Email.Fill(email);
+            Page.Age.Fill(age);
+            Page.Salary.Fill(salary);
+            Page.Department.Fill(department);
         }
 
         public void ValidateRowData(string firstName, string lastName, string email, string age, string salary, string department)
         {
-            var actualFirstName = _webTablesPage.Page.Locator($".rt-td:text('{firstName}')").TextContentAsync().GetAwaiter().GetResult();
-            var actualLastName = _webTablesPage.Page.Locator($".rt-td:text('{lastName}')").TextContentAsync().GetAwaiter().GetResult();
-            var actualEmail = _webTablesPage.Page.Locator($".rt-td:has-text('{email}')").TextContentAsync().GetAwaiter().GetResult();
-            var actualAge = _webTablesPage.Page.Locator($".rt-td:has-text('{age}')").TextContentAsync().GetAwaiter().GetResult();
-            var actualSalary = _webTablesPage.Page.Locator($".rt-td:has-text('{salary}')").TextContentAsync().GetAwaiter().GetResult();
-            var actualDepartment = _webTablesPage.Page.Locator($".rt-td:has-text('{department}')").TextContentAsync().GetAwaiter().GetResult();
+            var actualFirstName = Page.FindByText<Element>(".rt-td", firstName).GetText;
+            var actualLastName = Page.FindByText<Element>(".rt-td", lastName).GetText;
+            var actualEmail = Page.FindByText<Element>(".rt-td", email).GetText;
+            var actualAge = Page.FindByText<Element>(".rt-td", age).GetText;
+            var actualSalary = Page.FindByText<Element>(".rt-td", salary).GetText;
+            var actualDepartment = Page.FindByText<Element>(".rt-td", department).GetText;
 
             actualFirstName.Should().Be(firstName);
             actualLastName.Should().Be(lastName);
