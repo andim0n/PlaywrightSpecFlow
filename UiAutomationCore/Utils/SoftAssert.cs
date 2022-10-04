@@ -33,15 +33,15 @@ namespace UiAutomationCore.Utils
         {
             Logger.Info("-----------Test Finished-----------");
 
-            if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
-            {
-                //ExtentTestManager.GetTest().AddScreenCaptureFromBase64String(
-                //BrowserFactory.BrowserInstance.TakeScreenshot(), "Screenshot of the test when it failed.");
-                LogError(TestContext.CurrentContext.Result.Message);
-                ExtentTestManager.CreateMethod("Exception");
-                LogError(TestContext.CurrentContext.Result.Message +
-                         $". StackTrace: {TestContext.CurrentContext.Result.StackTrace}");
-            }
+            //if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
+            //{
+            //ExtentTestManager.GetTest().AddScreenCaptureFromBase64String(
+            //BrowserFactory.BrowserInstance.TakeScreenshot(), "Screenshot of the test when it failed.");
+            //LogError(TestContext.CurrentContext.Result.Message);
+            //ExtentTestManager.CreateMethod("Exception");
+            //LogError(TestContext.CurrentContext.Result.Message +
+            //         $". StackTrace: {TestContext.CurrentContext.Result.StackTrace}");
+            //}
 
             if (_assertionsMessages.Value == null || _assertionsMessages.Value.Count == 0) return;
 
