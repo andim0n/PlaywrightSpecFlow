@@ -19,7 +19,18 @@ namespace UiAutomationDemo.StepDefinitions
         [StepDefinition(@"Click '([^']*)' button")]
         public void ClickButton(string button)
         {
-            _webTablesService.ClickButton(button);
+            if (button is null)
+            {
+                throw new ArgumentNullException(nameof(button));
+            }
+            else if (button == "Add")
+            {
+                _webTablesService.ClickAddButton();
+            }
+            else if (button == "Submit")
+            {
+                _webTablesService.ClickSubmitButton();
+            }
         }
 
         [StepDefinition(@"I insert values '([^']*)', '([^']*)', '([^']*)', '([^']*)', '([^']*)', '([^']*)' in the registration form")]

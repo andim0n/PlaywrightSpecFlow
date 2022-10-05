@@ -11,17 +11,14 @@ namespace UiAutomationDemo.Services
             Page.Table.WaitForDisplayed();
         }
 
-        public void ClickButton(string button)
+        public void ClickAddButton()
         {
-            if (button == "Add")
-            {
-                Page.BtnAdd.Click();
-                Page.BtnSubmit.WaitForDisplayed();
-            }
-            else if (button == "Submit")
-            {
-                Page.BtnSubmit.Click();
-            }
+            Page.BtnAdd.Click();
+            Page.BtnSubmit.WaitForDisplayed();
+        }
+        public void ClickSubmitButton()
+        {
+            Page.BtnSubmit.Click();
         }
 
         public void FillRegistrationForm(string firstName, string lastName, string email, string age, string salary, string department)
