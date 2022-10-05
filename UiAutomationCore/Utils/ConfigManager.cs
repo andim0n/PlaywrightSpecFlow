@@ -10,9 +10,9 @@ namespace UiAutomationCore.Utils
             .AddEnvironmentVariables()
             .Build();
 
-        public static string BaseUiUrl => Configuration["Pages:BaseьUiUrl"];
-        public static string WebTablesPageUrl => Configuration["Pages:WebTablesPageUrl"];
-        public static string BooksPageUrl => Configuration["Pages:BooksPageUrl"];
+        public static string BaseUiUrl => Configuration["Pages:BaseUiUrl"];
+        public static string WebTablesPageUrl => $"{BaseUiUrl}/{Configuration["Pages:WebTablesPage"]}";
+        public static string BooksPageUrl => $"{BaseUiUrl}/{Configuration["Pages:BooksPage"]}";
         public static string ChromeBrowser => Configuration["Browsers:Chrome"];
         public static string FirefoxBrowser => Configuration["Browsers:Firefox"];
         public static string OperaBrowser => Configuration["Browsers:Opera"];

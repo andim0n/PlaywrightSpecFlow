@@ -14,7 +14,7 @@ namespace UiAutomationCore.UI.BasePage
         {
             _driver = new Driver();
             _page = _driver.Page;
-            Logger.Info($"Opening new page");
+            Logger.Info($"Opening new page with URL: {url}");
             _page.GotoAsync(url).GetAwaiter().GetResult();
         }
         protected BasePage()
